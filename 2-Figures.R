@@ -24,6 +24,9 @@ pdat = dat %>%
 
 ggplot(pdat, aes(month, year, fill=value)) + 
   geom_tile() + 
+  theme_minimal() +
+  labs(x="Month", y=NULL, fill="Max \n Temp") +
+  scale_y_discrete(breaks = seq(1885, 2020, 5)) +
   scale_fill_viridis_c() +  
   guides(fill = guide_colorbar(title.position = "top", 
                                direction = "vertical",
